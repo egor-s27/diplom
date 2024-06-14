@@ -1,0 +1,17 @@
+aside {
+    float: left;
+    background: #cccccc;
+    width: 50%;
+    padding: 2%;
+    height: 100vh;
+    border-right: 1px;
+}
+
+aside ul {
+    list-style: none
+}
+aside ul li {
+    color: #000;
+    display: block;
+    margin-top: 20px;
+}

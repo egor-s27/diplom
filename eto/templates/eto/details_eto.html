@@ -1,0 +1,21 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %}{{ eto.model }}{% endblock %}
+
+{% block body %}
+    <div class="features">
+<!--        обращаемся к объекту для вывода модели оборудования-->
+        <br><h2>{{ eto.vid_eto }}</h2><br>
+        <h4>Номер модели: {{ eto.model }}</h4><br>
+        <h4>Напряжение: {{ eto.napr }} В</h4><br>
+        <h4>Частота: {{ eto.chast }} Гц</h4><br>
+
+        <div class="bl">
+        <a href="{% url 'eto-update' eto.id %}" class="but_u">Изменить</a>
+        <a href="{% url 'eto-delete' eto.id %}" class="but_d">Удалить</a>
+        </div>
+
+
+    </div>
+<!--Вывод отдельного файла с кодом-->
+{% endblock %}

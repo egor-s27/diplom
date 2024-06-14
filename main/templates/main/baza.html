@@ -1,0 +1,70 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %}База знаний{% endblock %}
+
+{% block body %}
+    <h1>База знаний</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Эксперт заполняет поля значениями от 0 до 1, где 0 - никак не влияет на износ ЭО; 1 - напрямую влияет на износ ЭО.</p><br>
+        <label for="vid">Выберите модель ЭО</label>
+        {{ form.vid_eto }}
+        <label for="vid">Выберите метод согласованности</label>
+        {{ form.vid_metod }}
+        <label for="vid">Оцените влияние отклонения и колебания напряжения</label><br>
+        {{ form.otl_koleb }}<br>
+        <label for="vid">Оцените влияние нессиметрии напряжения</label><br>
+        {{ form.nes }}<br>
+        <label for="vid">Оцените влияние синусоидальности напряжения</label><br>
+        {{ form.sin }}<br>
+        <label for="vid">Оцените влияние отклонение частоты</label><br>
+        {{ form.otl_chast }}<br>
+        <label for="vid">Оцените влияние электромагнитных помех</label><br>
+        {{ form.pomehi }}<br>
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type="submit">Сохранить оценки</button>
+        </form><br><br>
+    {% if sa is not None %}
+        <h3>Итогововая классфикация по оценкам для "{{ vid_eto_value }}"</h3>
+            <span>Средняя оценка влияния Отклонения и колебания напряжения: {{ sa }}</span><br>
+                {% if sa < 0.4 %}
+                    <span>Тип параметра: Вспомогательный параметр</span><br><br>
+                {% elif sa > 0.4 and sa < 0.6 %}
+                    <span>Тип параметра: Дополнительный параметр</span><br><br>
+                {% else %}
+                    <span>Тип параметра: Основной параметр</span><br><br>
+                {% endif %}
+            <span>Средняя оценка влияния Нессиметрии напряжения: {{ nes_value }}</span><br>
+                {% if nes_value < 0.4 %}
+                    <span>Тип параметра: Вспомогательный параметр</span><br><br>
+                {% elif nes_value > 0.4 and nes_value < 0.6 %}
+                    <span>Тип параметра: Дополнительный параметр</span><br><br>
+                {% else %}
+                    <span>Тип параметра: Основной параметр</span><br><br>
+                {% endif %}
+            <span>Средняя оценка влияния Синусоидальности напряжения: {{ sin_value }}</span><br>
+                {% if sin_value < 0.4 %}
+                    <span>Тип параметра: Вспомогательный параметр</span><br><br>
+                {% elif sin_value > 0.4 and sin_value < 0.6 %}
+                    <span>Тип параметра: Дополнительный параметр</span><br><br>
+                {% else %}
+                    <span>Тип параметра: Основной параметр</span><br><br>
+                {% endif %}
+            <span>Средняя оценка влияния Отклонения частоты: {{ otl_chast_value }}</span><br>
+                {% if otl_chast_value < 0.4 %}
+                    <span>Тип параметра: Вспомогательный параметр</span><br><br>
+                {% elif otl_chast_value > 0.4 and otl_chast_value < 0.6 %}
+                    <span>Тип параметра: Дополнительный параметр</span><br><br>
+                {% else %}
+                    <span>Тип параметра: Основной параметр</span><br><br>
+                {% endif %}
+            <span>Средняя оценка влияния Электромагнитных помех: {{ pomehi_value }}</span><br>
+                {% if pomehi_value < 0.4 %}
+                    <span>Тип параметра: Вспомогательный параметр</span><br><br>
+                {% elif pomehi_value > 0.4 and pomehi_value < 0.6 %}
+                    <span>Тип параметра: Дополнительный параметр</span><br><br>
+                {% else %}
+                    <span>Тип параметра: Основной параметр</span><br><br>
+                {% endif %}
+    {% endif %}
+{% endblock %}

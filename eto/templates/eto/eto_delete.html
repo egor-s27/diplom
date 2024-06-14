@@ -1,0 +1,14 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %}Удаление ЭТО{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <h1>Удаление ЭТО</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">Удалить ЭТО</button>
+        </form>
+    </div>
+<!--Вывод отдельного файла с кодом-->
+{% endblock %}

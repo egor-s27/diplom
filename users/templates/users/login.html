@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body><div class="features">
+        <h1>Авторизация</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label>Введите фамилию</label><br>
+            {{ form.surname }}<br>
+            <label>Введите имя</label><br>
+            {{ form.name }}<br>
+            <label>Введите отчество</label><br>
+            {{ form.mid_name }}<br>
+            <label>Введите телефон</label><br>
+            {{ form.phone }}<br>
+            <label>Введите логин</label><br>
+            {{ form.login }}<br>
+            <label>Введите пароль</label><br>
+            {{ form.pas }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</body>
+</html>

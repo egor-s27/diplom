@@ -1,0 +1,100 @@
+
+aside {
+    float: left;
+    width: 25%;
+    height: 100vh;
+    display: block;
+}
+
+p {
+    margin-left: 5%
+}
+
+
+h1, h2{
+    text-align: center;
+}
+
+input, button, select{
+       width: 70%;
+       height: 40px;
+       margin: 1%;
+}
+
+
+label{
+    margin-left: 1%;
+}
+
+.form-check{
+    display: flex;
+    align-items: center;
+    margin: 1%;
+
+}
+
+.bloc {
+    margin: 1%;
+    display: flex;
+    background-color: #AFDAFC;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+    border-radius: 20px;
+}
+
+.bl {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.but_u, .but_d {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.but_u {
+    background-color: #3EB489;
+}
+
+.but_d {
+    background-color: #E4717A;
+}
+
+.buut{
+    width: 120px;
+    height: 40px;
+    background-color: #3EB489;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
+    color: #AFDAFC;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.au{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+

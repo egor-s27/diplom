@@ -1,0 +1,23 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %}Вывод БД{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <h1>Вывод БД</h1>
+        {% if eto %}
+            {% for el in eto %}
+        <div class="au">
+                <div class="bloc">
+                    <h4>{{ el.vid_eto }} {{ el.model }}</h4>
+<!--                    <p>{{ el.tip_1 }}, {{ el.tip_2 }}, {{ el.tip_3 }}</p>-->
+                    <a href="{% url 'eto-detail' el.id %}" class="buut">Подробнее</a>
+                </div>
+        </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас не заполнено оборудование</p>
+        {% endif %}
+    </div>
+<!--Вывод отдельного файла с кодом-->
+{% endblock %}

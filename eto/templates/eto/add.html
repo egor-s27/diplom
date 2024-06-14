@@ -1,0 +1,44 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %}Добавление ЭТО{% endblock %}
+
+{% block body %}
+
+
+    <div class="features">
+        <br>
+        <h1>Добавление ЭО</h1><br>
+        <form method="post">
+            {% csrf_token %}
+
+            <label for="mod">Модель оборудования</label><br>
+            {{ form.model }}<br>
+            <label for="napr">Напряжение</label><br>
+            {{ form.napr }}<br>
+            <label for="chast">Частота</label><br>
+            {{ form.chast }}<br>
+
+            <label for="vid">Выберите модель ЭО</label><br>
+            {{ form.vid_eto }}<br>
+            <div class="form-check mb-3">
+                {{ form.tip_1 }}
+                <label for="osnov" class="form-check-label">Основные</label>
+            </div>
+
+            <div class="form-check mb-3">
+                {{ form.tip_2 }}
+                <label for="dop" class="form-check-label">Дополнительные</label>
+            </div>
+
+            <div class="form-check mb-3">
+                {{ form.tip_3 }}
+                <label for="vspomog" class="form-check-label">Вспомогательные</label>
+            </div>
+
+            <span>{{ error }}</span>
+
+            <button class="btn btn-success" type="submit">Сохранить данные</button>
+        </form>
+    </div>
+<!--Вывод отдельного файла с кодом-->
+{% endblock %}
